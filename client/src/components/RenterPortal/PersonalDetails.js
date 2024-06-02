@@ -56,7 +56,7 @@ const PersonalDetails = () => {
     formDataToSend.append("days", formData.days);
 
     try {
-      const response = await axios.post("http://localhost:8585/api/personaldetails", formDataToSend, {
+      const response = await axios.post("https://two-wheeler-sigma.vercel.app/api/personaldetails", formDataToSend, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

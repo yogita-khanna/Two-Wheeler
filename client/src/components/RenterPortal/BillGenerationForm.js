@@ -33,7 +33,7 @@ const BillGenerationForm = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:8585/api/billGeneration",
+        "https://two-wheeler-sigma.vercel.app/api/billGeneration",
         formData
       );
 

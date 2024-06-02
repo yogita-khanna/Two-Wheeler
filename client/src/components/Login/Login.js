@@ -15,7 +15,7 @@ const Login = () => {
   }
   const handleChange = async () => {
       const response = await axios.post(
-        "http://localhost:8585/api/user/login",
+        "https://two-wheeler-sigma.vercel.app/api/user/login",
         {gname:email, pw:Pw}
       );
       console.log(response.data);
