@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
 import LeftSidebar from "../LeftSidebar";
-axios.defaults.baseURL = "https://two-wheeler-sigma.vercel.app/";
+axios.defaults.baseURL = "https://two-wheeler-three.vercel.app/";
 
 function BikeRiders() {
   const [name, setName] = useState("");
