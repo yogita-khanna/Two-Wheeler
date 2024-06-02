@@ -4,7 +4,7 @@ import LeftSidebar from "../LeftSidebar";
 import Login from "../Login/Login";
 import { useNavigate } from "react-router-dom";
 
-axios.defaults.baseURL = "https://two-wheeler-three.vercel.app";
+axios.defaults.baseURL = "https://two-wheeler-gilt.vercel.app";
 
 function BikeRiders() {
   const navigate = useNavigate();

@@ -15,7 +15,7 @@ const Login = () => {
   }
   const handleChange = async () => {
       const response = await axios.post(
-        "https://two-wheeler-three.vercel.app/api/user/login",
+        "https://two-wheeler-gilt.vercel.app/api/user/login",
         {gname:email, pw:Pw}
       );
       console.log(response.data);

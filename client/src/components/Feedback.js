@@ -25,7 +25,7 @@ const FeedbackForm = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch("https://two-wheeler-three.vercel.app/api/feedback", {
+      const response = await fetch("https://two-wheeler-gilt.vercel.app/api/feedback", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -17,7 +17,7 @@ const LeftSidebar = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleLogout = async () => {
-    await axios.get("https://two-wheeler-three.vercel.app/api/user/logout");
+    await axios.get("https://two-wheeler-gilt.vercel.app/api/user/logout");
 
     localStorage.clear();
     navigate("/");
