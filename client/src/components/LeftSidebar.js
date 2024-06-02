@@ -33,47 +33,47 @@ const LeftSidebar = () => {
   });
 
   return (
-    <div className="w-[25%] h-[647px] bg-gradient-to-b from-blue-900 to-blue-700 fixed p-2 rounded-lg shadow-lg">
+    <div className="w-[25%] h-[647px] bg-[#78350f] fixed p-2 rounded-lg shadow-lg">
       <h1 className="p-2 font-semibold text-white text-3xl">Riders Services</h1>
       <div className="p-1 font-semibold text-white text-xl space-y-2">
         <Link
           to="/"
-          className="rounded hover:bg-blue-700 hover:text-white flex p-2"
+          className="rounded hover:bg-black hover:text-white flex p-2"
         >
           <IoHomeSharp className="mt-4" />
           <h5 className="p-2">Home</h5>
         </Link>
         <Link
           to="/aboutus"
-          className="rounded hover:bg-blue-700 hover:text-white flex p-2"
+          className="rounded hover:bg-black hover:text-white flex p-2"
         >
           <FaInfoCircle className="mt-4" />
           <h5 className="p-2">About Us</h5>
         </Link>
         <Link
           to="/gallery"
-          className="rounded hover:bg-blue-700 hover:text-white flex p-2"
+          className="rounded hover:bg-black hover:text-white flex p-2"
         >
           <FaRegistered className="mt-4" />
           <h5 className="p-2">Renter Portal</h5>
         </Link>
         <Link
           to="/addrider"
-          className="rounded hover:bg-blue-700 hover:text-white flex p-2"
+          className="rounded hover:bg-black hover:text-white flex p-2"
         >
           <RiContrastFill className="mt-4" />
           <h5 className="p-2">Owner Portal</h5>
         </Link>
         <Link
           to="/contactus"
-          className="rounded hover:bg-blue-700 hover:text-white flex p-2"
+          className="rounded hover:bg-black hover:text-white flex p-2"
         >
           <IoMdContact className="mt-4" />
           <h5 className="p-2">Contact Us</h5>
         </Link>
         <Link
           to="/feedback"
-          className="rounded hover:bg-blue-700 hover:text-white flex p-2"
+          className="rounded hover:bg-black hover:text-white flex p-2"
         >
           <MdFeedback className="mt-4" />
           <h5 className="p-2">Feedback</h5>
@@ -83,7 +83,7 @@ const LeftSidebar = () => {
         ) : (
           <Link
           to="/login"
-          className="rounded hover:bg-blue-700 hover:text-white flex p-2"
+          className="rounded hover:bg-black hover:text-white flex p-2"
         >
           <RiLoginCircleFill className="mt-4" />
           <h5 className="p-2">Login</h5>
@@ -94,7 +94,7 @@ const LeftSidebar = () => {
         ) : (
           <Link
           to="/register"
-          className="rounded hover:bg-blue-700 hover:text-white flex p-2"
+          className="rounded hover:bg-black hover:text-white flex p-2"
         >
           <GiBuyCard className="mt-4" />
           <h5 className="p-2">Register</h5>
@@ -102,7 +102,7 @@ const LeftSidebar = () => {
         )}
 
         {isLoggedIn ? (
-          <div className="rounded hover:bg-blue-700 hover:text-white flex p-2">
+          <div className="rounded hover:bg-black hover:text-white flex p-2">
             <RiLogoutCircleFill className="mt-4" />
             <button onClick={handleLogout} className="p-2">
               Logout
