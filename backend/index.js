@@ -16,6 +16,41 @@ dotenv.config();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cookieParser());
+// function to verify
+
+
+// const requireAuth = (req, res, next) =>{
+//   const token1 = req.cookies.jwt;
+//   var token2 = false;
+//   if(!req.cookies.email){
+//     res.send('No student is Authorised')
+//   }
+//   User.find({email : req.cookies.email}).then(val =>{
+//     if(val[0].role === 'admin'){
+//       token2 = true;
+//       if(token1 && token2){
+//         jwt.verify(token1,'kslkdlkhiy8iyiuiuh87y87yhhyg87yugug78uyiy9y87dls', (err, decodedToken) =>{
+//           if(err){
+//             console.log('huhiuiuhihiuhihu');
+//             console.log(err.message);
+//           }else{
+//             next();
+//           }
+//         });
+//           }
+//           else{
+//             res.send('404 error no student in authorised');
+//           }
+//     }
+
+//     });
+
+// };
+
+
+
+
+// function end
 
 
 app.use(session({
@@ -23,6 +58,14 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }));
+
+
+// Connect to MongoDB
+// mongoose.connect("mongodb+srv://khannayogita723:yogita@cluster0.qvjejhq.mongodb.net/?retryWrites=true&w=majority", {
+//   useNewUrlParser: true,
+//   useUnifiedTopology: true,
+// });
+
 
 mongoose.connect(process.env.MONGO_URL, {
   useNewUrlParser: true,
@@ -48,7 +91,9 @@ app.use('/api', require('./routes/BillGeneration'));
 app.use('/api', require('./routes/Feedback'));
 
 
-
+app.get('*', (req, res) => {
+  res.send('Backend is running');
+});
 
 
 // Start the server
