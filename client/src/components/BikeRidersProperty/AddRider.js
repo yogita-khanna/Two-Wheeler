@@ -31,24 +31,30 @@ function BikeRiders() {
 
   const handleChange = (e) => {
     const file = e.target.files[0];
-    setDrivingPapers(file);
+    let blobURL = URL.createObjectURL(file);
+    let str = String(blobURL)
+    console.log(str)
+    setDrivingPapers(str);
   };
 
   const addRider = async (event) => {
     event.preventDefault();
 
-    const formData = new FormData();
-    formData.append("name", name);
-    formData.append("latitude", latitude);
-    formData.append("longitude", longitude);
-    formData.append("preOwned", preOwned);
-    formData.append("address", address);
-    formData.append("email", email);
-    formData.append("phoneNumber", phoneNumber);
-    formData.append("drivingPapers", drivingPapers);
+    // const formData = new FormData();
+    // formData.append("name", name);
+    // formData.append("latitude", latitude);
+    // formData.append("longitude", longitude);
+    // formData.append("preOwned", preOwned);
+    // formData.append("address", address);
+    // formData.append("email", email);
+    // formData.append("phoneNumber", phoneNumber);
+    // formData.append("drivingPapers", drivingPapers);
+    let obj = {
+      name, latitude, longitude, preOwned, address, email, phoneNumber, drivingPapers
+    }
 
     try {
-      await axios.post("/api/riders", formData);
+      await axios.post("/api/riders", obj);
       alert("Rider added successfully!");
       setName("");
       setLatitude("");

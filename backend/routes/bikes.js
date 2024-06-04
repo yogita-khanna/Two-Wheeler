@@ -33,8 +33,6 @@ const upload = multer({ storage: storage });
 
 router.post(
   "/riders",
-  upload.fields([{ name: "drivingPapers", maxCount: 1 }]),
-  // requireAuth,
   async (req, res) => {
     try {
       const {
@@ -44,18 +42,20 @@ router.post(
         preOwned,
         address,
         email,
+        drivingPapers,
         phoneNumber,
       } = req.body;
+      console.log(drivingPapers, name)
       const newRider = new Rider({
         name,
         preOwned,
         address,
         email,
         phoneNumber,
-        drivingPapers: req.files["drivingPapers"][0].path,
+        drivingPapers:drivingPapers.toString(),
         location: {
           type: "Point",
-          coordinates: [parseFloat(longitude), parseFloat(latitude)],
+          coordinates: [44, 88],
         },
       });
       await newRider.save();
@@ -106,11 +106,7 @@ router.post(
         
         <p>Regards,<br>
         <strong>Two Wheeler Rental Platform Team</strong></p>`,
-        attachments: [
-          {
-            path: req.files["drivingPapers"][0].path, // Path to the file
-          },
-        ],
+        
       };
 
       await transporter.sendMail(mailOptions, (error, info) => {
